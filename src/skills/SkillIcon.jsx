@@ -10,6 +10,7 @@ import figmaIcon from "../assets/icon-figma.svg";
 import tailwindIcon from "../assets/icon-tailwindcss.svg";
 import githubIcon from "../assets/github.png";
 import bootstrapIcon from "../assets/bootstrap.png";
+import canva from "../assets/canva-icon.svg";
 
 const SkillIcon = () => {
   return (
@@ -69,6 +70,30 @@ const SkillIcon = () => {
             className="w-[74px] h-[66px]"
           />
           <p className="mt-2 text-center">Bootstrap</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg"
+            alt="Fifth Icon"
+            className="w-[74px] h-[66px]"
+          />
+          <p className="mt-2 text-center">Lightroom</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
+            alt="Fifth Icon"
+            className="w-[74px] h-[66px]"
+          />
+          <p className="mt-2 text-center">Sass</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img
+            src={canva}
+            alt="Fifth Icon"
+            className="w-[74px] h-[66px]"
+          />
+          <p className="mt-2 text-center">Canva</p>
         </div>
       </div>
     </div>
