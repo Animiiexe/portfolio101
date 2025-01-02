@@ -36,8 +36,8 @@ To get started with the development of this app, follow these steps:
 # Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/Animiiexe/portfolio101 .git
+cd portfolio101 
 npm install
 ```
 # Run the Development Server
