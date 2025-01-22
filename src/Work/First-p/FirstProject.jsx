@@ -35,7 +35,7 @@ const FirstProject = () => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, [slides.length]);
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-white to-gray-100 p-8 rounded-lg shadow-lg space-y-8 lg:space-y-0 lg:space-x-8 ">
+    <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-gray-200 to-gray-400 p-8 rounded-lg shadow-lg space-y-8 lg:space-y-0 lg:space-x-8 ">
       {/* Right Text Section */}
       <div className="w-full lg:w-1/2 space-y-4">
         <h2 className="text-2xl font-bold text-black tracking-wider">
