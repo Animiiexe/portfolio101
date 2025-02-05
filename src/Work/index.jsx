@@ -16,7 +16,7 @@ const Work = () => {
            <ThirdProject/>
           </div>
           <div className="md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12 ">
-            <FirstProject />
+          <FirstProject />
           </div>
           <div className="md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12 ">
           <SecondProject />

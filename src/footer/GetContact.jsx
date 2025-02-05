@@ -3,32 +3,34 @@ import github from "../assets/github.png";
 import linkedin from "../assets/linkedin.png";
 import twitter from "../assets/twitter.jpg";
 import discord from "../assets/discord1.png";
+import ContactForm from "./Contactform";
 
 const GetContact = () => {
   return (
     <div className="pt-3">
       <div className="items-center flex justify-center font-semibold">
-      <h1
-  className="bg-blue-600 text-white w-[125px] h-[28px] justify-center items-center flex size-3 md:w-[200px] md:h-[50px] md:text-xl rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white hover:scale-105 hover:shadow-xl"
->
-  Get In Touch
-</h1>
-
+        <h1 className="bg-blue-600 text-white w-[125px] h-[28px] justify-center items-center flex size-3 md:w-[200px] md:h-[50px] md:text-xl rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white hover:scale-105 hover:shadow-xl">
+          Get In Touch
+        </h1>
       </div>
 
       <div className="text-lg pt-4 md:text-xl mt-14 ">
-        <p className="flex items-center justify-center text-gray-600 ">
-          The What's Next? Feel Free to reach out
-        </p>
-        <p className="flex items-center justify-center text-gray-600 ">
-          to me if you'r looking for a
-        </p>
-        <p className="flex items-center justify-center text-gray-600 ">
-          developer, have a query, or simply want
-        </p>
-        <p className="flex items-center justify-center text-gray-600 ">
-          to connect.
-        </p>
+        <div className="mb-10">
+          <p className="flex items-center justify-center text-gray-600 ">
+            The What's Next? Feel Free to reach out
+          </p>
+          <p className="flex items-center justify-center text-gray-600 ">
+            to me if you'r looking for a
+          </p>
+          <p className="flex items-center justify-center text-gray-600 ">
+            developer, have a query, or simply want
+          </p>
+          <p className="flex items-center justify-center text-gray-600 ">
+            to connect.
+          </p>
+        </div>
+
+        <ContactForm />
 
         <div className="pt-10 flex items-center justify-center gap-3  md:text-3xl">
           <svg
@@ -83,10 +85,7 @@ const GetContact = () => {
               </a>
             </div>
             <div>
-              <a
-                href="https://discord.com/users/lordxoxo"
-                target="_blank"
-              >
+              <a href="https://discord.com/users/lordxoxo" target="_blank">
                 <img
                   src={discord}
                   alt="GitHub Logo"
@@ -117,9 +116,11 @@ const GetContact = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="flex items-center justify-center mt-36 gap-4 text-sm">
-          <h1 className="text-gray-500">2024 | Designed and Coded with ❤ by Animesh..</h1>
+          <div className="flex items-center justify-center mt-36 gap-4 text-sm p-3">
+            <h1 className="text-gray-500">
+              2025 | Designed and Coded with ❤ by Animesh..
+            </h1>
+          </div>
         </div>
       </div>
     </div>
