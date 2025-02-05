@@ -14,7 +14,7 @@ import canva from "../assets/canva-icon.svg";
 
 const SkillIcon = () => {
   return (
-    <div class="pt-10">
+    <div className="pt-10">
       <div className="w-full max-w-[1440px] mx-auto grid grid-cols-3 gap-8 sm:grid-cols-3 md:grid-cols-5 lg:max-w-[1440px] text-gray-500 font-semibold">
         <div className="flex flex-col items-center">
           <img src={reactIcon} alt="React Icon" className="w-auto h-auto" />
