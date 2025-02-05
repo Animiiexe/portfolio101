@@ -36,7 +36,6 @@ const ContactForm = () => {
 
     return (
         <div className={`${isDarkMode ? "bg-white text-black border-gray-800" : "bg-white text-black border-gray-200"} p-6 rounded-xl shadow-xl max-w-lg mx-auto border`}>
-            <h2 className="text-2xl font-semibold mb-4 text-center">Get in Touch</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     type="text"
