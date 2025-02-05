@@ -11,7 +11,7 @@ const Text = () => {
         Master's degree in Computer Science and a strong foundation in building
         dynamic, user-centric applications. I am a certified MERN stack
         developer, proficient in developing full-stack web applications using {" "}
-        <span className="font-semibold">ReactJS, NodeJS, ExpressJS and MongoDB</span>I am excited to share my expertise and contribute to the ever-evolving tech industry.
+        <span className="font-semibold">ReactJS, NodeJS, ExpressJS and MongoDB.</span> I am excited to share my expertise and contribute to the ever-evolving tech industry.
         extraordinary digital experiences that are not only fast and accessible
         but also visually stunning and responsive.</p>
       </div>
