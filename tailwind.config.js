@@ -16,7 +16,7 @@ export default {
       keyframes: {
         textPulse: {
           '0%, 100%': { color: '#3b82f6' }, // Blue
-          '50%': { color: '#ffffff' }, // Purple
+          '50%': { color: '#FFD700' }, // yellow
         },}
     },
   },

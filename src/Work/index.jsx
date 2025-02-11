@@ -11,7 +11,7 @@ const Work = () => {
             Work
           </h1>
         </div>
-        <div className="space-y-28">
+        <div className="space-y-28 ">
           <div className="md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12 ">
            <ThirdProject/>
           </div>

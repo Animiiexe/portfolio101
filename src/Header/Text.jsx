@@ -3,27 +3,11 @@
 const Text = () => {
   return (
     <div className="p-4 sm:p-6">
-      <div className="text-4xl font-bold">Hi, <span className="text-customBlue">I'm Animesh</span></div>
+      <div className="text-4xl font-bold sm:text-5xl leading-tight">Hi, <span className="text-customBlue">I'm Animesh</span></div>
 
       <div className="pt-4 tracking-wide ">
-      <p>
-         A passionate software developer with a
-        Master's degree in Computer Science and a strong foundation in building
-        dynamic, user-centric applications. I am a certified MERN stack
-        developer, proficient in developing full-stack web applications using {" "}
-        <span className="font-semibold">ReactJS, NodeJS, ExpressJS and MongoDB.</span> I am excited to share my expertise and contribute to the ever-evolving tech industry.
-        extraordinary digital experiences that are not only fast and accessible
-        but also visually stunning and responsive.</p>
-      </div>
-      <div className="pt-4 tracking-wide ">
-        Currently, I am seeking exciting job opportunities where I can leverage
-        my skills to create impactful solutions while continuing to grow and
-        learn in the tech industry. I thrive in collaborative environments,
-        enjoy problem-solving, and take pride in writing clean, efficient, and
-        scalable code. When I’m not coding, I enjoy exploring new technologies,
-        contributing to projects, and staying updated with the latest trends in
-        the web development world. Let’s connect and build something amazing
-        together!
+      <p>Passionate software developer with a Master’s in Computer Science and a certified MERN stack expertise. Skilled in building dynamic, user-centric applications using <span className="font-bold">ReactJS, NodeJS, ExpressJS, and MongoDB.</span>  I thrive in collaborative environments, love problem-solving, and take pride in writing clean, scalable code. Seeking exciting opportunities to create impactful solutions while continuously learning and growing. Let’s connect and build something amazing!
+      </p>
       </div>
 
       <div className="flex pt-7">
