@@ -3,32 +3,12 @@
 @tailwind utilities;
 
 
-  /* App.css */
-  body.day {
-    background-color: white;
-    color: black;
-    
-  }
-  
-  body.night {
-    background-color: black;
-    color: white;
-  }
-  
-  /* Ensure text is visible in night mode */
-  body.night .text-dark {
-    color: white;
-  }
-  
-  body.day .text-light {
-    color: black;
-  }
-  
+html[data-theme="night"] {
+  background-color: black;
+  color: white;
+}
 
-  /* In your global CSS file */
-html {
-    scroll-behavior: smooth;
-  }
-
-  
-  
+html[data-theme="day"] {
+  background-color: white;
+  color: black;
+}

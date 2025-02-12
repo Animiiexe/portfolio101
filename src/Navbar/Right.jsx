@@ -1,73 +1,45 @@
-
-
 import React, { useEffect, useState } from "react";
 
 const Right = () => {
   const [show, setShow] = useState(false);
   const [light, setLight] = useState("day");
 
+  // Function to change theme
   const changeTheme = (theme) => {
     localStorage.setItem("theme", theme);
-    document.body.classList = [theme];
-    if (light === "night") {
-      setLight("day");
-    } else {
-      setLight("night");
-    }
+    document.documentElement.setAttribute("data-theme", theme);
+    setLight(theme);
   };
 
   useEffect(() => {
-    const selectedTheme = localStorage.getItem("theme");
-    if (selectedTheme) {
-      document.body.classList.add(selectedTheme);
-    } else if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
-      document.body.classList.add("night");
-    } else {
-      document.body.classList.add("day");
-    }
+    // Get saved theme or use system preference
+    const selectedTheme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day");
+
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+    setLight(selectedTheme);
   }, []);
 
   return (
-    <div className="">
-      <div className="w-auto hidden sm:flex md:pr-16 gap-2 text- font-semibold ">
-      <a
-  href="#about"
-  className=" hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
->
-          About
-        </a>
-        <a
-          href="#skills"
-         className=" hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-        >
-          Skills
-        </a>
-        <a
-          href="#work"
-          className=" hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-        >
-          Work
-        </a>
-        <a
-          href="#experience"
-         className=" hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-        >
-          Experience
-        </a>
-        <a
-          href="#contact"
-          className=" hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-        >
-          Contact
-        </a>
+    <div>
+      <div className="w-auto hidden sm:flex md:pr-16 gap-2 font-semibold">
+        {["about", "skills", "work", "experience", "contact"].map((section) => (
+          <a
+            key={section}
+            href={`#${section}`}
+            className="hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </a>
+        ))}
 
+        {/* Theme Toggle Button */}
         <div
-          className="h-9 w-9 aspect-square flex justify-center items-center mr-4"
-          onClick={() => {
-            changeTheme(light == "day" ? "night" : "day");
-          }}
+          className="h-9 w-9 flex justify-center items-center cursor-pointer"
+          onClick={() => changeTheme(light === "day" ? "night" : "day")}
         >
-          {light == "day" ? (
+          {light === "day" ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -100,9 +72,9 @@ const Right = () => {
           )}
         </div>
 
+        {/* CV Download Button */}
         <a
-          className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg 
-hover:bg-blue-700 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300 ease-in-ou"
+          className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300 ease-in-out"
           href="https://drive.google.com/file/d/1UOiK6XUcRbSdwS7o1XP2pwA-0CFIehLB/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
@@ -111,44 +83,28 @@ hover:bg-blue-700 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all d
         </a>
       </div>
 
-      <div
-        onClick={() => setShow((prev) => !prev)}
-        className="sm:hidden relative "
-      >
+      {/* Mobile Menu */}
+      <div onClick={() => setShow((prev) => !prev)} className="sm:hidden relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-8 text-gray-800 mr-4 bold"
+          className="size-8 text-gray-800 mr-4"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
+
         {show && (
           <div className="absolute flex flex-col bg-slate-700/70 p-2 rounded-lg top-8 right-2 z-20 gap-2 font-semibold">
-            <a href="#about" className="text-white hover:text-gray-300">
-              About
-            </a>
-            <a href="#skills" className="text-white hover:text-gray-300">
-              Skills
-            </a>
-            <a href="#work" className="text-white hover:text-gray-300">
-              Work
-            </a>
-            <a href="#experience" className="text-white hover:text-gray-300">
-              Experience
-            </a>
-            <a href="#contact" className="text-white hover:text-gray-300">
-              Contact
-            </a>
+            {["about", "skills", "work", "experience", "contact"].map((section) => (
+              <a key={section} href={`#${section}`} className="text-white hover:text-gray-300">
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            ))}
             <a
-              className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg 
-hover:bg-blue-700 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300 ease-in-ou"
+              className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300 ease-in-out"
               href="https://drive.google.com/file/d/1UOiK6XUcRbSdwS7o1XP2pwA-0CFIehLB/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"

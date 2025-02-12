@@ -7,11 +7,12 @@ import Experience from "./Experience";
 import Work from "./Work";
 import Navbar from "./Navbar";
 import Contact from "./footer";
-
+import AnimatedBackground from "./AnimatedBackground";
 function App() {
   return (
     <>
       <div className="w-full">
+        <AnimatedBackground />
         <Navbar />
         <section id="about">
           <Header />
