@@ -25,17 +25,21 @@ const ThirdProject = () => {
   const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 p-6 rounded-2xl shadow-xl space-y-6 lg:space-y-0 lg:space-x-6 transition-all duration-500">
+    <div className="flex flex-col lg:flex-row items-center bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-2xl space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
       {/* Left Image Section */}
       <div className="w-full lg:w-1/2">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-lg backdrop-blur-md bg-white/10 border border-white/20">
+        <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 border border-white/20">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {slides.map((slide) => (
               <div key={slide.id} className="flex-shrink-0 w-full">
-                <img src={slide.image || "/placeholder.svg"} alt={slide.alt} className="w-full h-auto object-cover rounded-lg shadow-md" />
+                <img
+                  src={slide.image || "/placeholder.svg"}
+                  alt={slide.alt}
+                  className="w-full h-auto object-cover rounded-lg shadow-md"
+                />
               </div>
             ))}
           </div>
@@ -43,59 +47,72 @@ const ThirdProject = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/30 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-md hover:bg-white/50 transition-all duration-300"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/30 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-md hover:bg-white/50 transition-all duration-300"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={24} />
           </button>
 
           {/* Dots Indicator */}
-          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slides.map((_, index) => (
-              <div key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-blue-500 shadow-md scale-110" : "bg-gray-400 bg-opacity-50"}`}></div>
+              <div
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-indigo-500 shadow-md scale-110"
+                    : "bg-gray-400 bg-opacity-50"
+                }`}
+              ></div>
             ))}
           </div>
         </div>
       </div>
 
       {/* Right Text Section */}
-      <div className="w-full lg:w-1/2 space-y-4">
-        <h2 className="text-2xl font-bold dark:text-yellow-400 tracking-wider">
-          Pokédex 411 <span className="text-sm  dark:text-gray-400">{"{Information Hub}"}</span>
+      <div className="w-full lg:w-1/2 space-y-6">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-yellow-400 tracking-tight">
+          Pokédex 411 {" "}
+          <span className="text-base font-medium">{"{Information Hub}"}</span>
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 text-sm tracking-wide leading-relaxed">
-          I built a full-stack web application combining React for an interactive and responsive frontend. This project showcases a modern, functional Pokédex with a sleek user interface. The app fetches data dynamically from a local JSON file and displays relevant information about Pokémon in an organized and visually appealing way.
+        <p className="text-base leading-relaxed">
+        A full-stack Pokédex web app with a responsive UI, built using React, Tailwind CSS, and Bootstrap cards for a clean design. It efficiently fetches and displays Pokémon data from a local JSON file, ensuring seamless performance. Powered by Parcel for fast bundling, it delivers an optimized user experience with structured and visually appealing Pokémon details.
         </p>
 
         {/* Buttons */}
-        <div className="flex space-x-3">
+        <div className="flex space-x-4">
           <a
             href="https://pokedex411.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-md text-sm transition-all duration-300"
+            className="px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 backdrop-blur-md"
           >
-            Visit Website
+            <span>Visit Website</span>
+            <ExternalLink size={16} />
           </a>
           <a
             href="https://github.com/animiiexe/pokedex411"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-md shadow-md text-sm transition-all duration-300"
+            className="px-6 py-3  bg-white/20 hover:bg-white/30 rounded-lg shadow-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 backdrop-blur-md"
           >
-            View Source
+            <span>View Source</span>
+            <ExternalLink size={16} />
           </a>
         </div>
 
         {/* Technology Stack */}
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-2">
           {["React", "Parcel", "Netlify", "JavaScript", "TailwindCSS", "Git"].map((tech) => (
-            <span key={tech} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium transition-all duration-300">
+            <span
+              key={tech}
+              className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md"
+            >
               {tech}
             </span>
           ))}

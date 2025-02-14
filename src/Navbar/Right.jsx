@@ -23,7 +23,7 @@ const Right = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center w-full px-5 py-4">
+    <div className="flex justify-between items-center w-full py-4">
       {/* Left Side (Logo) */}
       <Left />
 

@@ -17,7 +17,7 @@ const GetContact = () => {
 
       {/* Contact Description */}
       <div className="text-lg pt-4 md:text-xl mt-14 text-center text-gray-600 space-y-2">
-        <p>The What's Next? Feel free to reach out</p>
+        <p>Then What's Next? Feel free to reach out</p>
         <p>if you're looking for a developer, have a query,</p>
         <p>or simply want to connect.</p>
       </div>
