@@ -47,16 +47,16 @@ const Work = () => {
       </div>
 
       <div className="space-y-28 min-h-screen">
-        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12">
+        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col shadow-xl mt-12">
           <FourthProject />
         </div>
-        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12">
+        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col shadow-xl mt-12">
           <ThirdProject />
         </div>
-        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12">
+        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col shadow-xl mt-12">
           <FirstProject />
         </div>
-        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col border border-3 rounded-lg shadow-xl mt-12">
+        <div className="project-card md:flex md:text-2xl md:gap-5 md:flex-col shadow-xl mt-12">
           <SecondProject />
         </div>
       </div>

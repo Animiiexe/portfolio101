@@ -33,10 +33,10 @@ const FirstProject = () => {
     );
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-blue-900/20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
+    <div className="flex flex-col lg:flex-row items-center bg-blue-900/20 backdrop-blur-lg p-8 rounded-2xl shadow-neon-blue space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
       {/* Left Image Section */}
       <div className="w-full lg:w-1/2">
-        <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 border border-white/20">
+        <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 ">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
