@@ -33,7 +33,7 @@ const FourthProject = () => {
     );
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-2xl space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
+    <div className="flex flex-col lg:flex-row items-center bg-blue-900/20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
       {/* Left Image Section */}
       <div className="w-full lg:w-1/2">
         <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 border border-white/20">
@@ -84,7 +84,7 @@ const FourthProject = () => {
 
       {/* Right Text Section */}
       <div className="w-full lg:w-1/2 space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-yellow-400 tracking-tight">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-yellow-600 tracking-tight">
           Yapster
           <span className="text-base font-medium">{" {AI Chat App} "}</span>
         </h2>
