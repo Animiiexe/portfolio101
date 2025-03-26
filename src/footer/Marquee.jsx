@@ -1,5 +1,4 @@
 
-
 import { motion } from "framer-motion"
 
 const Marquee = () => {
@@ -19,7 +18,7 @@ const Marquee = () => {
                 WebkitTextStroke: "1px rgb(156 163 175)", // tailwind gray-400
               }}
             >
-              Flowers & Saints
+              Crafting Digital Experiences 
             </span>
           </div>
         ))}

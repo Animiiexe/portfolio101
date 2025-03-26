@@ -133,7 +133,7 @@ const SecondProject = () => {
           ].map((tech) => (
             <span
               key={tech}
-              className="px-4 py-2 bg-white/20 backdrop-blur-md  dark:text-gray-200 rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md"
+              className="px-4 py-2 bg-white/20 backdrop-blur-md   rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md"
             >
               {tech}
             </span>
