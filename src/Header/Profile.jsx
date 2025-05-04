@@ -11,7 +11,6 @@ export default function Profile() {
     setIsVisible(true);
   }, []);
 
-
   return (
     <section
       id="home"
@@ -19,25 +18,25 @@ export default function Profile() {
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div
-    className={cn(
-      "relative aspect-square max-w-md mx-auto md:ml-auto transition-all duration-1000 delay-300 transform",
-      isVisible
-        ? "translate-y-0 opacity-100"
-        : "translate-y-10 opacity-0"
-    )}
-  >
-    <div className="relative w-64 h-70 md:w-80 md:h-80">
-      <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-background rounded-full animate-pulse duration-100"></div>
-      <div className="relative z-10 h-full">
-        <img
-          src={pic}
-          alt="Profile"
-          className="object-cover w-100 h-full"
-        />
-      </div>
-    </div>
-  </div>
+          <div
+            className={cn(
+              "relative aspect-square max-w-md mx-auto md:ml-auto transition-all duration-1000 delay-300 transform",
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            )}
+          >
+            <div className="relative w-64 h-70 md:w-80 md:h-80">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-background rounded-full animate-pulse duration-100"></div>
+              <div className="relative z-10 h-full">
+                <img
+                  src={pic}
+                  alt="Profile"
+                  className="object-cover w-100 h-full"
+                />
+              </div>
+            </div>
+          </div>
           <div
             className={cn(
               "transition-all duration-1000 transform",
@@ -103,14 +102,10 @@ export default function Profile() {
               </a>
             </div>
           </div>
-
-          
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronDown className="h-6 w-6 text-muted-foreground" />
+          </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>
   );
