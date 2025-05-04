@@ -7,16 +7,17 @@ import ContactForm from "./Contactform";
 
 const GetContact = () => {
   return (
-    <div className="pt-3">
+    <div className="pt-10">
       {/* Section Title */}
-      <div className="flex justify-center font-semibold">
-        <h1 className="bg-blue-600 text-white w-[125px] h-[28px] flex items-center justify-center md:w-[200px] md:h-[50px] md:text-xl rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:scale-105 hover:shadow-xl">
-          Get In Touch
-        </h1>
+      <div className="flex flex-col items-center justify-center font-sans">
+        <h2 className="text-4xl md:text-5xl font-bold mt-20 mb-4 text-center">
+          Get in{" "}<span className="text-blue-600 hover:text-blue-700 transition-colors duration-300">Touch</span>
+        </h2>
+        <div className="w-16 h-1 bg-blue-500 mb-6 rounded-full"></div>
       </div>
 
       {/* Contact Description */}
-      <div className="text-lg pt-4 md:text-xl mt-14 text-center text-gray-600 space-y-2">
+      <div className="text-lg pt-4 md:text-xl mt-10 text-center text-gray-600 space-y-2">
         <p>Then What's Next? Feel free to reach out</p>
         <p>if you're looking for a developer, have a query,</p>
         <p>or simply want to connect.</p>

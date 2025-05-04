@@ -1,19 +1,21 @@
-import React from 'react'
+import React from "react";
 
 const SkillText = () => {
   return (
-    <div className='pt-3'>
+    <div className="pt-3">
+      <div className="flex flex-col items-center justify-center font-sans">
+        <h2 className="text-4xl md:text-5xl font-bold mt-16 mb-4 text-center text-blue-600 hover:text-blue-700 transition-colors duration-300">
+          Skills
+        </h2>
 
-     <div className='items-center flex justify-center font-semibold'>
-     <h1 className="bg-blue-600 text-white w-[125px] h-[28px] justify-center items-center flex size-3 md:w-[200px] md:h-[50px] md:text-xl rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white hover:scale-105 hover:shadow-xl">Skills</h1> 
-     </div>
-    <div className='text-lg font-semibold text-gray-600 pt-4'>
-      <p>The skills, tools and technologies I am </p>
-      <p className='flex items-center justify-center '>really good at:</p>
+        <div className="w-16 h-1 bg-blue-500 mb-6 rounded-full"></div>
+        <p className="text-lg text-center mb-8 max-w-2xl mx-auto leading-relaxed">
+          The skills, tools and technologies I am{" "}
+          <span className="text-blue-500 font-medium">really good at</span>
+        </p>
+      </div>
     </div>
-    
-    </div>
-  )
-}
+  );
+};
 
-export default SkillText
+export default SkillText;

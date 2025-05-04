@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-
-import project1 from "../../assets/image1.png";
-import project2 from "../../assets/image2.png";
-import project3 from "../../assets/image3.png";
+import project1 from "../../assets/image10.png";
+import project2 from "../../assets/image11.png";
+import project3 from "../../assets/image12.png";
+import { motion } from 'framer-motion';
+import { Eye } from "lucide-react";
+import { Snowflake } from "lucide-react";
 
 const FirstProject = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,10 +34,18 @@ const FirstProject = () => {
     );
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-blue-900/20 backdrop-blur-lg p-8 rounded-2xl shadow-neon-blue space-y-8 lg:space-y-0 lg:space-x-8 transition-all duration-500">
-      {/* Left Image Section */}
-      <div className="w-full lg:w-1/2">
-        <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 ">
+    <div className="project-card">
+     <motion.div
+  whileHover={{ 
+    y: -5,
+    boxShadow: "0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -4px rgba(37, 99, 235, 0.3)"
+  }}
+  className="p-3 rounded-xl border border-blue-600 hover:border-blue-600/50 transition-all shadow-sm hover:shadow-lg"
+>
+      {/* Project One */}
+      <div className="overflow-hidden">
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2">Yapster - AI Chat App </h3>
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -46,96 +55,51 @@ const FirstProject = () => {
                 <img
                   src={slide.image || "/placeholder.svg"}
                   alt={slide.alt}
-                  className="w-full h-auto object-cover rounded-lg shadow-md"
+                  className="w-full h-auto object-cover rounded-lg shadow-md p-2"
                 />
               </div>
             ))}
           </div>
+          <p className="m-5">
+            Yapster An AI-enhanced chat app delivering instant, smart responses
+            and real-time messaging with smooth interaction cues.<br/><span className="text-blue-600 font-bold">Features:</span>Live
+            conversations • AI-powered replies • Typing indicators • Sleek
+            interface
+          </p>
 
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-gray-800 p-2 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300"
-          >
-            <ChevronRight size={24} />
-          </button>
+          <div className="flex flex-wrap gap-2 mb-5">
+            <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+              React
+            </span>
+            <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+              Node.js
+            </span>
+            <span className="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">
+              MongoDB
+            </span>
+            <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
+              Tailwind CSS
+            </span>
+          </div>
 
-          {/* Dots Indicator */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-indigo-500 shadow-md scale-110"
-                    : "bg-gray-400 bg-opacity-50"
-                }`}
-              ></div>
-            ))}
+          <div className="flex gap-4">
+            <a
+              href="#"
+              className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            >
+              <Snowflake className="w-4 h-4 mr-1" />
+              Code
+            </a>
+            <a
+              href="#"
+              className="flex items-center text-green-600 hover:text-green-800 font-medium"
+            >
+              <Eye className="w-4 h-4 mr-1" />
+              Live Demo
+            </a>
           </div>
         </div>
-      </div>
-
-      {/* Right Text Section */}
-      <div className="w-full lg:w-1/2 space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-yellow-600 tracking-tight">
-          Edumate{" "}
-          <span className="text-base  font-medium">
-            {"{College Portal}"}
-          </span>
-        </h2>
-        <p className="text-base  leading-relaxed">
-          College Portal is a web application that allows users to view
-          information about various colleges and add new colleges to the list.Built with HTML, CSS, and JavaScript, it features a simple and intuitive interface that makes accessing college details easy and user-friendly. Designed for smooth navigation, the app provides an efficient way to explore college data and manage the list effortlessly.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex space-x-4">
-          <a
-            href="https://animiiexe.github.io/Edumate/Edumate/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 backdrop-blur-md"
-          >
-            <span>Visit Website</span>
-            <ExternalLink size={16} />
-          </a>
-          <a
-            href="https://github.com/animiiexe/Edumate"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg shadow-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 backdrop-blur-md"
-          >
-            <span>View Source</span>
-            <ExternalLink size={16} />
-          </a>
-        </div>
-
-        {/* Technology Stack */}
-        <div className="flex flex-wrap gap-2">
-          {[
-            "React",
-            "Parcel",
-            "Netlify",
-            "JavaScript",
-            "TailwindCSS",
-            "Git",
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
+      </div></motion.div>
     </div>
   );
 };
