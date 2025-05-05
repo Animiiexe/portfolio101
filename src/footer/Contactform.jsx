@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, User } from "lucide-react";
+import { Mail, User, PenBox } from "lucide-react";
 
 const Contactform = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -34,16 +34,19 @@ const Contactform = () => {
                 Can't Find What You Need?
               </h2>
               <p className="mb-6">
-                If you're looking for specific guidance that isn't covered in
-                our tutorials, our support team is ready to help.
+              
+        Then What's Next? Feel free to reach out
+        if you're looking for a developer, have a query,
+        or simply want to connect.
+      
               </p>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="/community"
-                className="inline-block px-6 py-3 rounded-lg font-medium bg-blue-600 hover:bg-black text-white transition-all shadow-lg shadow-purple-500/20"
+                href="mailto:animesh2325@gmail.com"
+                className="inline-block px-6 py-3 rounded-lg font-medium bg-blue-600 hover:bg-black text-white transition-all shadow-lg shadow-blue-500/20"
               >
-                Contact Support
+                Contact Me
               </motion.a>
             </div>
 
@@ -56,10 +59,9 @@ const Contactform = () => {
               className="p-6 rounded-xl border border-blue-600 hover:border-blue-600/50 transition-all shadow-sm hover:shadow-lg"
             >
               <form onSubmit={handleSubmit}>
-                <h3 className="text-xl font-medium mb-4">Request a Tutorial</h3>
+                <h3 className="text-xl font-medium mb-4">Let’s Work Together</h3>
                 <p className="text-sm mb-4">
-                  Is there a specific topic you'd like us to cover in a future
-                  tutorial? Let us know!
+                I’d love to hear about your ideas. Send me a message, and I’ll respond ASAP!
                 </p>
                 <div className="space-y-4">
                   <div className="relative">
@@ -86,17 +88,21 @@ const Contactform = () => {
                       className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-                  <textarea
-                    name="entry.1103157260"
-                    placeholder="Describe the tutorial you'd like to see"
-                    rows={4}
-                    className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none "
-                  ></textarea>
+                  <div className="relative">
+                    <PenBox className="h-5 w-5 text-white absolute left-3 top-3" />
+                    <textarea
+                      name="entry.1103157260"
+                      placeholder="Describe the topic"
+                      rows={4}
+                      className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none "
+                    ></textarea>
+                  </div>
+
                   <motion.button
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-3 rounded-lg font-medium  bg-blue-600 text-white hover:bg-black transition-all shadow-lg shadow-purple-500/20"
+                    className="w-full px-6 py-3 rounded-lg font-medium  bg-blue-600 text-white hover:bg-black transition-all shadow-lg shadow-blue-500/20"
                   >
                     Submit Request
                   </motion.button>

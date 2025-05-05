@@ -10,9 +10,9 @@ const experiences = [
   {
     title: "Frontend Developer Intern",
     company: "Pinnacle labs",
-    img: companyLogo1,
+    img: companyLogo,
     location: "Remote",
-    period: "Jul 2023-Sep 2023",
+    period: "Mar 2024-Apr 2024",
     responsibilities: [
       "Developed responsive websites for various clients using modern JavaScript frameworks",
       "Gained hands-on technical experience",
@@ -22,10 +22,10 @@ const experiences = [
   },
   {
     title: "Web Developer Intern",
-    img: companyLogo,
+    img: companyLogo1,
     company: "IAC",
     location: "Remote",
-    period: "Mar 2024-Apr 2024",
+    period: "Jul 2023-Sep 2023",
     responsibilities: [
       "Worked on Full-Stack Development",
       "Improved website performance by 40% through code optimization and lazy loading",

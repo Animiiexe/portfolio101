@@ -15,14 +15,6 @@ const GetContact = () => {
         </h2>
         <div className="w-16 h-1 bg-blue-500 mb-6 rounded-full"></div>
       </div>
-
-      {/* Contact Description */}
-      <div className="text-lg pt-4 md:text-xl mt-10 text-center text-gray-600 space-y-2">
-        <p>Then What's Next? Feel free to reach out</p>
-        <p>if you're looking for a developer, have a query,</p>
-        <p>or simply want to connect.</p>
-      </div>
-
       {/* Contact Form */}
       <div className="mt-10">
         <ContactForm />
@@ -88,7 +80,7 @@ const GetContact = () => {
 
       {/* Footer */}
       <div className="flex justify-center mt-20 text-sm text-gray-500">
-        <p>2025 | Designed and Coded with ❤ by Animesh.</p>
+        <p>{new Date().getFullYear()} | Designed and Coded with ❤ by Animesh.</p>
       </div>
     </div>
   );
