@@ -88,14 +88,14 @@ const SecondProject = () => {
 
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://github.com/Animiiexe/pokedex101"
               className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
             >
               <Snowflake className="w-4 h-4 mr-1" />
               Code
             </a>
             <a
-              href="#"
+              href="https://pokedex411.netlify.app/"
               className="flex items-center text-green-600 hover:text-green-800 font-medium"
             >
               <Eye className="w-4 h-4 mr-1" />
