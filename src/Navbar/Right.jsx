@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Left from "./Left"; // Import Left Component
+import Left from "./Left";
 
 const Right = () => {
   const [show, setShow] = useState(false);
@@ -23,131 +23,234 @@ const Right = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center w-full py-4">
+    <motion.div
+      className="flex justify-between items-center w-full py-4 px-6 top-0 left-0 right-0 z-50 transition-all duration-300 "
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Left Side (Logo) */}
       <Left />
 
       {/* Right Side (Navigation + Theme Toggle + CV Button) */}
-      <div className="w-auto hidden sm:flex md:pr-16 gap-5 font-semibold items-center">
+      <div className="w-auto hidden sm:flex items-center gap-6">
         {/* Navigation Links */}
-        {["about", "skills", "work", "experience", "contact"].map((section) => (
-          <motion.a
-            key={section}
-            href={`#${section}`}
-            className="hover:text-white hover:bg-gray-800 px-5 py-2 font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
-          </motion.a>
-        ))}
+        <div className="flex items-center gap-1">
+          {["about", "skills", "work", "experience", "contact"].map((section) => (
+            <motion.a
+              key={section}
+              href={`#${section}`}
+              className="relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+              <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-3/4 group-hover:left-2"></span>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
 
         {/* Theme Toggle Button */}
-        <motion.div
-          className="h-9 w-9 flex justify-center items-center cursor-pointer rounded-full bg-gray-200  dark:bg-gray-700"
+        <motion.button
+          className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
           onClick={() => changeTheme(light === "day" ? "night" : "day")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          aria-label="Toggle dark mode"
         >
-          {light === "night" ? ( // Show moon icon in dark mode
-            
-               <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={1.5}
-               stroke="currentColor"
-               className="size-6 text-gray-200"
-             >
-               <path
-                 strokeLinecap="round"
-                 strokeLinejoin="round"
-                 d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-               />
-             </svg>
-          ) : ( // Show sun icon in light mode
+          {light === "night" ? (
             <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6 text-gray-200"
-          >
-            <path
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-            />
-          </svg>
+              className="w-5 h-5"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
           )}
-        </motion.div>
+        </motion.button>
 
         {/* CV Download Button */}
         <motion.a
-          className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-500/50 transition-all duration-300 ease-in-out"
+          className="px-4 py-2 font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
           href="https://drive.google.com/file/d/1AfpDCvEoPtCjRuaJz10xPr9w6vFOqg-L/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05, boxShadow: "0 10px 20px -5px rgba(59, 130, 246, 0.3)" }}
           whileTap={{ scale: 0.95 }}
-        >
-          Download CV
-        </motion.a>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className="sm:hidden relative">
-        <motion.div
-          onClick={() => setShow((prev) => !prev)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
+            strokeWidth={2}
             stroke="currentColor"
-            className="size-8 text-gray-800 dark:text-gray-200 mr-4"
+            className="w-5 h-5"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+            />
           </svg>
-        </motion.div>
+          Resume
+        </motion.a>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="sm:hidden flex items-center gap-4">
+        <motion.button
+          className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+          onClick={() => changeTheme(light === "day" ? "night" : "day")}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Toggle dark mode"
+        >
+          {light === "night" ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          )}
+        </motion.button>
+
+        <motion.button
+          onClick={() => setShow((prev) => !prev)}
+          className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Menu"
+        >
+          {show ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          )}
+        </motion.button>
 
         {show && (
           <motion.div
-            className="absolute flex flex-col bg-slate-700/90 backdrop-blur-sm p-4 rounded-lg top-12 right-2 z-20 gap-3 font-semibold shadow-lg"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            className="absolute flex flex-col bg-white dark:bg-gray-800 p-6 rounded-xl top-16 right-6 z-50 gap-3 shadow-xl border border-gray-100 dark:border-gray-700 w-64"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
           >
             {["about", "skills", "work", "experience", "contact"].map((section) => (
               <motion.a
                 key={section}
                 href={`#${section}`}
-                className="text-white hover:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-800/50 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="px-4 py-3 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 font-medium"
+                whileHover={{ x: 5 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setShow(false)}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </motion.a>
             ))}
             <motion.a
-              className="relative px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-500/50 transition-all duration-300 ease-in-out"
+              className="mt-2 px-4 py-3 font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg flex items-center justify-center gap-2"
               href="https://drive.google.com/file/d/1ztXzJ8zkf9CyaFrnolUeJeINrYKU4Ang/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                />
+              </svg>
               Download CV
             </motion.a>
           </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
