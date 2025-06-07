@@ -30,7 +30,16 @@ const Right = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Left Side (Logo) */}
-      <Left />
+    <h2 className="text-blue-500 font-bold text-4xl pl-3 md:pl-14">
+  <a
+    href="https://github.com/Animiiexe"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-blue-700 transition-all duration-300 ease-in-out"
+  >
+    <Left />
+  </a>
+</h2>
 
       {/* Right Side (Navigation + Theme Toggle + CV Button) */}
       <div className="w-auto hidden sm:flex items-center gap-6">
