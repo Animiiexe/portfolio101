@@ -1,6 +1,4 @@
-"use client";
 
-import React, { useRef } from "react";
 import logo from "../assets/logo1.png";
 import {
   motion,
