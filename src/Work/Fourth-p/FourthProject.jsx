@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import project1 from "../../assets/image4.png";
 import project2 from "../../assets/image5.png";
 import project3 from "../../assets/image6.png";
-import { motion } from 'framer-motion';
-import { Eye } from "lucide-react";
-import { Snowflake } from "lucide-react";
+import { motion } from "framer-motion";
+import { Eye, Snowflake } from "lucide-react";
 
 const FourthProject = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,35 +16,37 @@ const FourthProject = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      setCurrentIndex((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
       );
     }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  const nextSlide = () =>
-    setCurrentIndex((prevIndex) =>
-      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-    );
-  const prevSlide = () =>
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
+
 
   return (
-    <div className="project-card"> 
-    <motion.div
-  whileHover={{ 
-    y: -5,
-    boxShadow: "0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -4px rgba(37, 99, 235, 0.3)"
-  }}
-  className="p-3 rounded-xl border border-blue-600 hover:border-blue-600/50 transition-all shadow-sm hover:shadow-lg"
->
-      {/* Project One */}
-      <div className="overflow-hidden">
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">My movie list</h3>
+    <div className="project-card min-h-[600px]">
+      <motion.div
+        whileHover={{
+          y: -5,
+          boxShadow:
+            "0 10px 15px -3px rgba(37, 99, 235, 0.3), 0 4px 6px -4px rgba(37, 99, 235, 0.3)",
+        }}
+        className="h-full flex flex-col justify-between p-6 rounded-xl border border-blue-600 hover:border-blue-600/50 transition-all shadow-sm hover:shadow-lg"
+      >
+        {/* Project Title */}
+        <motion.h3
+          className="text-xl font-bold "
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+        >
+          My Movie List
+        </motion.h3>
+
+        {/* Image Slider */}
+        <div className="overflow-hidden rounded-lg">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -55,51 +56,76 @@ const FourthProject = () => {
                 <img
                   src={slide.image || "/placeholder.svg"}
                   alt={slide.alt}
-                  className="w-full h-auto object-cover rounded-lg shadow-md p-2"
+                  className="aspect-[8/4] w-full object-cover rounded-lg shadow-md"
                 />
               </div>
             ))}
           </div>
-          <p className="m-5">
-            A sleek TMDB-powered platform showcasing trending films with
-            detailed info, search, and smooth animations for seamless browsing.<br/>
-            <span className="text-blue-600 font-bold">Features:</span>Latest movies • Ratings & trailers • Instant search •
-            Clean UI
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-5">
-            <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-              React
-            </span>
-            <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
-              Tmdb API
-            </span>
-            <span className="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">
-             Javascript
-            </span>
-            <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
-              Tailwind CSS
-            </span>
-          </div>
-
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/Animiiexe/project"
-              className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
-            >
-              <Snowflake className="w-4 h-4 mr-1" />
-              Code
-            </a>
-            <a
-              href="https://project-nine-weld.vercel.app/"
-              className="flex items-center text-green-600 hover:text-green-800 font-medium"
-            >
-              <Eye className="w-4 h-4 mr-1" />
-              Live Demo
-            </a>
-          </div>
         </div>
-      </div>
+
+        {/* Description & Features */}
+        <motion.p
+          className="mb-5 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          A sleek TMDB-powered movie platform that showcases trending films
+          with detailed data, search functionality, and smooth transitions for a
+          fluid user experience.
+          <br />
+          <span className="block mt-2 text-blue-600 font-semibold">
+            Features:
+          </span>
+          <ul className="list-disc pl-5 mt-1 space-y-1">
+            <li>Discover trending movies instantly</li>
+            <li>View trailers, ratings, and summaries</li>
+            <li>Real-time search with suggestions</li>
+            <li>Fully responsive modern UI</li>
+          </ul>
+        </motion.p>
+
+        {/* Tech Stack */}
+        <motion.div
+          className="flex flex-wrap gap-2 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {["React", "TMDB API", "JavaScript", "Tailwind CSS","Motion"].map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full border border-blue-100 hover:bg-blue-100 transition-colors"
+            >
+              {tech}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* Buttons */}
+        <motion.div
+          className="flex gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <a
+            href="https://github.com/Animiiexe/project"
+            className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            target="_blank" rel="noopener noreferrer"
+          >
+            <Snowflake className="w-4 h-4 mr-1" />
+            Code
+          </a>
+          <a
+            href="https://project-nine-weld.vercel.app/"
+            className="flex items-center text-green-600 hover:text-green-800 font-medium"
+            target="_blank" rel="noopener noreferrer"
+          >
+            <Eye className="w-4 h-4 mr-1" />
+            Live Demo
+          </a>
+        </motion.div>
       </motion.div>
     </div>
   );
