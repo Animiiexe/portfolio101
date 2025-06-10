@@ -62,25 +62,17 @@ const FirstProject = () => {
         </div>
 
         {/* Description */}
-        <motion.p
-          className="mb-5 leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          Yapster is an AI-enhanced chat app delivering instant, smart responses
-          and real-time messaging with smooth interaction cues.
-          <br />
-          <span className="block mt-2 text-blue-600 font-semibold">
-            Features:
-          </span>
+        <motion.div className="mb-5 leading-relaxed">
+          <p>Yapster is an AI-enhanced chat app...</p>
+
+          <p className="mt-2 text-blue-600 font-semibold">Features:</p>
           <ul className="list-disc pl-5 mt-1 space-y-1">
             <li>Live conversations with typing indicators</li>
             <li>AI-powered contextual replies</li>
             <li>Modern, sleek interface</li>
             <li>Responsive across all devices</li>
           </ul>
-        </motion.p>
+        </motion.div>
 
         {/* Tech Stack */}
         <motion.div

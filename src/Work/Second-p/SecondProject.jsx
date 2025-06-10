@@ -61,24 +61,22 @@ const SecondProject = () => {
       </div>
     </div>
 
-    <motion.p
-      className="mb-5 leading-relaxed"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2 }}
-    >
-      A responsive Pokémon encyclopedia with clean UI, fetching data from a local JSON.
-      <br />
-      <span className="block mt-2 text-blue-600 font-semibold">
-        Features:
-      </span>
-      <ul className="list-disc pl-5 mt-1 space-y-1">
-        <li>Structured Pokémon details</li>
-        <li>Fast performance</li>
-        <li>Visually appealing cards</li>
-        <li>Responsive across all devices</li>
-      </ul>
-    </motion.p>
+    <motion.div
+  className="mb-5 leading-relaxed"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.2 }}
+>
+  <p>A responsive Pokémon encyclopedia with clean UI, fetching data from a local JSON.</p>
+  
+  <p className="mt-2 text-blue-600 font-semibold">Features:</p>
+  <ul className="list-disc pl-5 mt-1 space-y-1">
+    <li>Structured Pokémon details</li>
+    <li>Fast performance</li>
+    <li>Visually appealing cards</li>
+    <li>Responsive across all devices</li>
+  </ul>
+</motion.div>
 
     <motion.div
       className="flex flex-wrap gap-2 mb-6"

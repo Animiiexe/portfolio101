@@ -71,15 +71,19 @@ const ThirdProject = () => {
         </div>
 
         {/* Description & Features */}
-        <motion.p
+        <motion.div
           className="mb-5 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <strong>Cover AI</strong> is a fun SaaS-level image editing and generation tool powered by the Cloudinary API. It allows users to effortlessly enhance, transform, or generate new images with a seamless interface and real-time previews.
-          <br />
-          <span className="block mt-2 text-blue-600 font-semibold">Features:</span>
+          <p>
+            <strong>Cover AI</strong> is a fun SaaS-level image editing and generation tool powered by the Cloudinary API.
+            It allows users to effortlessly enhance, transform, or generate new images with a seamless interface
+            and real-time previews.
+          </p>
+
+          <p className="mt-2 text-blue-600 font-semibold">Features:</p>
           <ul className="list-disc pl-5 mt-1 space-y-1">
             <li>Image upload, cropping, and transformation with Cloudinary</li>
             <li>AI-based style and filter presets</li>
@@ -87,7 +91,7 @@ const ThirdProject = () => {
             <li>Clean UI with responsive design</li>
             <li>Fast, API-driven performance optimized for modern browsers</li>
           </ul>
-        </motion.p>
+        </motion.div>
 
         {/* Tech Stack */}
         <motion.div

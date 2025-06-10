@@ -64,27 +64,28 @@ const FourthProject = () => {
         </div>
 
         {/* Description & Features */}
-        <motion.p
-          className="mb-5 leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          A sleek TMDB-powered movie platform that showcases trending films
-          with detailed data, search functionality, and smooth transitions for a
-          fluid user experience.
-          <br />
-          <span className="block mt-2 text-blue-600 font-semibold">
-            Features:
-          </span>
-          <ul className="list-disc pl-5 mt-1 space-y-1">
-            <li>Discover trending movies instantly</li>
-            <li>View trailers, ratings, and summaries</li>
-            <li>Real-time search with suggestions</li>
-            <li>Fully responsive modern UI</li>
-          </ul>
-        </motion.p>
-
+        <motion.div
+  className="mb-5 leading-relaxed"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.2 }}
+>
+  <p>
+    A sleek TMDB-powered movie platform that showcases trending films
+    with detailed data, search functionality, and smooth transitions for a
+    fluid user experience.
+  </p>
+  
+  <p className="mt-2 text-blue-600 font-semibold">
+    Features:
+  </p>
+  <ul className="list-disc pl-5 mt-1 space-y-1">
+    <li>Discover trending movies instantly</li>
+    <li>View trailers, ratings, and summaries</li>
+    <li>Real-time search with suggestions</li>
+    <li>Fully responsive modern UI</li>
+  </ul>
+</motion.div>
         {/* Tech Stack */}
         <motion.div
           className="flex flex-wrap gap-2 mb-6"
