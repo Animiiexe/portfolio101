@@ -8,7 +8,7 @@ export const ScrollProgress = (({ className, ...props }, ref) => {
     <motion.div
       ref={ref}
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-1.5 origin-left shadow-lg",
+        "fixed inset-x-0 top-0 z-50 h-0.5 origin-left shadow-lg",
         className
       )}
       style={{
