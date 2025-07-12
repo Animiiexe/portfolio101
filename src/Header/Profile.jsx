@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import RotatingText from '../ui/RotatingText';
 import pic from "../assets/photoid.png";
 import { ChevronDown, Download } from "lucide-react";
 import { cn } from "../lib/utils";
@@ -49,9 +49,35 @@ export default function Profile() {
               Hi, I'm{" "}
               <span className="text-primary text-blue-500">Animesh</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
-              Frontend Developer
-            </h2>
+            <div className="flex">
+              <RotatingText
+
+                texts={["Frontend Developer",
+                  "Designing in Code",
+                  "Always Learning",
+                  "Minimal by Default",
+                  "React, Tailwind, Repeat"]}
+
+                mainClassName="rounded text-3xl pl-2 pr-2 bg-blue-600  font-bold tracking-tight mb-4 "
+
+                staggerFrom={"last"}
+
+                initial={{ y: "100%" }}
+
+                animate={{ y: 0 }}
+
+                exit={{ y: "-120%" }}
+
+                staggerDuration={0.025}
+
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+
+                rotationInterval={2000}
+
+              /></div>
+
             <p className="text-lg text-muted-foreground mb-8 max-w-md">
               I design and build exceptional digital experiences that are
               modern, responsive, and intuitive.
