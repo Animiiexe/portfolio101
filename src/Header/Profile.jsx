@@ -3,6 +3,7 @@ import RotatingText from '../ui/RotatingText';
 import pic from "../assets/photoid.png";
 import { ChevronDown, Download } from "lucide-react";
 import { cn } from "../lib/utils";
+import Photo from "./Photo";
 
 export default function Profile() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,14 +27,9 @@ export default function Profile() {
                 : "translate-y-10 opacity-0"
             )}
           >
-            <div className="relative w-64 h-70 md:w-80 md:h-80">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-background rounded-full animate-pulse duration-100"></div>
-              <div className="relative z-10 h-full">
-                <img
-                  src={pic}
-                  alt="Profile"
-                  className="object-cover w-100 h-full"
-                />
+            <div className="relative ">
+              <div className="relative z-10 h-full ">
+                <Photo />
               </div>
             </div>
           </div>
@@ -58,7 +54,7 @@ export default function Profile() {
                   "Minimal by Default",
                   "React, Tailwind, Repeat"]}
 
-                mainClassName="rounded text-3xl pl-2 pr-2 bg-blue-600  font-bold tracking-tight mb-4 "
+                mainClassName="rounded text-3xl pl-2 pr-2 bg-blue-600 text-yellow-500 font-bold tracking-tight mb-4 "
 
                 staggerFrom={"last"}
 
