@@ -1,6 +1,6 @@
 import React from "react";
 import reactIcon from "../assets/icon-react.svg";
-import expressIcon from "../assets/express2.png";
+import expressIcon from "../assets/expressjs.png";
 import NodejsIcon from "../assets/icon-nodejs.svg";
 import gitIcon from "../assets/icon-git.svg";
 import javaScriptIcon from "../assets/javscript.svg";
@@ -10,10 +10,14 @@ import tailwindIcon from "../assets/icon-tailwindcss.svg";
 import githubIcon from "../assets/github.png";
 import bootstrapIcon from "../assets/bootstrap.png";
 import canva from "../assets/canva-icon.svg";
+import Postman from "../assets/postman.webp";
+import vercel from "../assets/vercel.png";
+import npm from "../assets/npm.webp";
+import RestApi from "../assets/restapi.webp";
 
 const SkillIcon = () => {
   return (
-    <div className="pt-10">
+    <div className="pt-10 mb-10">
       <div className="w-full max-w-[1440px] mx-auto text-gray-500 font-semibold space-y-8">
 
         {/* Frontend Skills */}
@@ -30,13 +34,20 @@ const SkillIcon = () => {
           <Skill img={expressIcon} name="Express.js" />
           <Skill img={NodejsIcon} name="Node.js" />
           <Skill img={mongodbIcon} name="MongoDB" />
+          <Skill img={RestApi} name="Rest API" />
         </SkillCategory>
 
-        <SkillCategory title="Tools">
-          <Skill img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqwNwDUq_S0U6wDzS60c45kVK5zpxF-03wsQ&s" name="Vercel" />
+        <SkillCategory title="Development Tools">
+          <Skill img={Postman} name="Postman" />
           <Skill img={gitIcon} name="Git" />
-          <Skill img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQacDoTjTBt08VHjGkG4zTMHjMwNOD_Q-1BSQ&s" name="Netlify" />
           <Skill img={githubIcon} name="GitHub" />
+          <Skill img={npm} name="npm" />
+        </SkillCategory>
+
+        {/* Deployment */}
+        <SkillCategory title="Deployment">
+          <Skill img={vercel} name="Vercel" />
+          <Skill img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQacDoTjTBt08VHjGkG4zTMHjMwNOD_Q-1BSQ&s" name="Netlify" />
         </SkillCategory>
 
 

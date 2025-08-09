@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
-import Skills from "./skills";
+import TechStack from "./skills";
 import Header from "./Header";
 import Experience from "./Experience";
 import Work from "./Work";
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Loader isLoading={isLoading} />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
@@ -39,7 +39,7 @@ function App() {
               <Header />
             </section>
             <section id="skills">
-              <Skills />
+              <TechStack />
             </section>
             <section id="work">
               <Work />
