@@ -7,21 +7,19 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
-import GetMaterialImage from '../assets/image11.png';
-import LemonStudioImage from '../assets/image8.png';
+import yapster from "../assets/yapster.png";
+import DrawIo from '../assets/Image12.png';
 
 import DealsOfAgroImage from '../assets/image5.png';
 import HeyDropImage from '../assets/image2.png';
-
 import framermotion from '../assets/framermotion.png';
 import nextjs from '../assets/nextjs.png';
 import nodejs from '../assets/nodejs.png';
-
 import react from '../assets/react.png';
 import restapi from '../assets/restapi.webp';
 import tailwindcss from '../assets/tailwindcss.png';
 import expressjs from '../assets/expressjs.png';
-
+import socketio from '../assets/socket.png';
 import typescript from '../assets/typescript.svg';
 
 
@@ -39,7 +37,33 @@ export default function WorkShowcaseSnapping() {
 
   const projects = [
     {
-      id: 1,
+  id: 1,
+  link: "https://draw-io-opal.vercel.app/",
+  title: "Draw.io",
+  tagline: "A modern, intuitive collaborative drawing platform for real-time creativity and teamwork.",
+  description: "Draw.io is a real-time collaborative drawing platform that empowers teams and individuals to create together seamlessly from anywhere in the world. Featuring professional-grade tools, instant synchronization, and a smooth cross-platform experience, it redefines online creative collaboration.",
+  techStack: [
+    { name: "Next.js 14", icon: nextjs },
+    { name: "React 18", icon: react },
+    { name: "TypeScript", icon: typescript },
+    { name: "Tailwind CSS", icon: tailwindcss },
+    { name: "Socket.IO", icon: socketio },
+  ],
+  features: [
+    "Custom color picker with 256 colors and custom palettes",
+    "Multiple brush types: Brush, Pencil, Marker, Smart Eraser",
+    "Undo/Redo for mistake-free creativity",
+    "Instant synchronization across devices",
+    "Responsive design for desktop, tablet, and mobile",
+    "Touch-optimized mobile drawing",
+  ],
+  image: DrawIo,
+  accentColor: "bg-blue-500",
+  bgGradient: "from-blue-800 to-blue-600"
+},
+
+    {
+      id: 2,
       link: "https://yapsterv2.vercel.app/",
       title: "Yapster",
       tagline: "Anonymous real-time chat with AI replies, threading, and safe moderation.",
@@ -57,12 +81,12 @@ export default function WorkShowcaseSnapping() {
         "Modern, sleek interface",
         "Responsive across all devices",
       ],
-      image: GetMaterialImage,
+      image: yapster,
       accentColor: "bg-green-500",
       bgGradient: "from-green-800 to-green-600"
     },
     {
-      id: 2,
+      id: 3,
       link: "https://cover-ai-ruby.vercel.app/",
       title: "Cover AI",
       tagline: "Cover AI — Create, Transform, and Generate Stunning Images in Seconds.",
@@ -84,31 +108,7 @@ export default function WorkShowcaseSnapping() {
       image: HeyDropImage, // Replace this with your imported image reference
       accentColor: "bg-orange-500",
       bgGradient: "bg-gradient-to-l from-[#fb7185] via-[#a21caf] to-[#6366f1]"
-    }
-    ,
-    {
-      id: 3,
-      link: "https://pokedex411.netlify.app/",
-      title: "Pokédex - A guide for Pokémons",
-      tagline: "Catch ’Em All, Anytime, Anywhere — Your Responsive Pokémon Encyclopedi",
-      description: "A responsive Pokémon encyclopedia built with JavaScript, Bootstrap, and Parcel.Displays Pokémon data from a local JSON file in a clean card layout. ",
-      techStack: [
-        { name: "React", icon: react },
-        { name: "Tailwind CSS", icon: tailwindcss },
-        { name: "Framer Motion", icon: framermotion },
-
-      ],
-      features: [
-        "Structured Pokémon details",
-        "Fast performance",
-        "Visually appealing cards",
-        "Responsive across all devices"
-      ],
-      image: LemonStudioImage,
-      accentColor: "bg-yellow-500",
-      bgGradient: "from-yellow-600 to-orange-600"
     },
-
     {
       id: 4,
       link: "https://project-nine-weld.vercel.app/",
