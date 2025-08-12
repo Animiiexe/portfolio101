@@ -73,7 +73,8 @@ export default function WorkShowcaseSnapping() {
         { name: "Node.js", icon: nodejs },
         { name: "Express.js", icon: expressjs },
         { name: "Rest API", icon: restapi },
-        { name: "Tailwind CSS", icon: tailwindcss }
+        { name: "Tailwind CSS", icon: tailwindcss },
+        { name: "Socket.IO", icon: socketio }
       ],
       features: [
         "Live conversations with typing indicators",
