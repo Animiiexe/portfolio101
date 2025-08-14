@@ -4,8 +4,8 @@ const SkillText = () => {
   return (
     <div className="pt-3">
       <div className="flex flex-col items-center justify-center font-sans">
-        <h2 className="text-4xl md:text-5xl font-bold mt-16 mb-4 text-center text-blue-600 hover:text-blue-700 transition-colors duration-300">
-          Skills
+        <h2 className="text-4xl md:text-5xl font-bold mt-16 mb-4 text-center">
+          Tech <span className="bg-clip-text text-blue-600">Stack</span>
         </h2>
 
         <div className="w-16 h-1 bg-blue-500 mb-6 rounded-full"></div>
