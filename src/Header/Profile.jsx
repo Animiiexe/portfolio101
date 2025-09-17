@@ -110,7 +110,7 @@ export default function Profile() {
               </div>
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href="https://drive.google.com/file/d/1AfpDCvEoPtCjRuaJz10xPr9w6vFOqg-L/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1QwCL0GrVgBQ5_i5elVEJH0l5vYOZvlY_/view?usp=sharing">
                 <button className="flex items-center px-5 py-2.5 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume

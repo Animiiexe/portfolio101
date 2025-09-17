@@ -99,7 +99,7 @@ const Right = () => {
         {/* CV Download Button */}
         <motion.a
           className="px-4 py-2 font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
-          href="https://drive.google.com/file/d/1AfpDCvEoPtCjRuaJz10xPr9w6vFOqg-L/view?usp=sharing"
+          href="https://drive.google.com/file/d/1QwCL0GrVgBQ5_i5elVEJH0l5vYOZvlY_/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05, boxShadow: "0 10px 20px -5px rgba(59, 130, 246, 0.3)" }}
@@ -223,7 +223,7 @@ const Right = () => {
             ))}
             <motion.a
               className="mt-2 px-4 py-3 font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg flex items-center justify-center gap-2"
-              href="https://drive.google.com/file/d/1ztXzJ8zkf9CyaFrnolUeJeINrYKU4Ang/view?usp=sharing"
+              href="https://drive.google.com/file/d/1QwCL0GrVgBQ5_i5elVEJH0l5vYOZvlY_/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
