@@ -86,7 +86,7 @@ const GetContact = () => {
           <div className="w-full max-w-sm">
             <iframe
               src="https://open.spotify.com/embed/playlist/1yc74n9S2bqeoaooQUjP4q?utm_source=generator&theme=0&locale=en_US"
-              className="w-full h-40 rounded-md shadow-md"
+              className="w-full h-40"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               allowFullScreen
